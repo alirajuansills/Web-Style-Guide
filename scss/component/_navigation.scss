@@ -1,0 +1,36 @@
+@import "../utilities/variables";
+
+.nav {
+  padding-left: 0;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-link {
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+
+  &-link:hover {
+    color: $font-color;
+    background-color: $secondary-color;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    &-link {
+      flex-base: 100px;
+    }
+
+    .col-9 {
+      flex-basis: 75%;
+    }
+  }
+}
