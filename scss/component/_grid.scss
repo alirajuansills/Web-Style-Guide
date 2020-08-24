@@ -1,11 +1,30 @@
+@import "../utilities/variables";
+
 .container {
   padding: 0 10px;
+
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 1400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .row {
   display: flex;
   flex-direction: column;
   padding: 1em 10px;
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+
+    .centered {
+      // display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 
 [class^="col"] {
@@ -14,8 +33,22 @@
   min-height: 25px;
   padding: 10px;
   border-radius: 5px;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    align-items: center;
+
+    & + [class^="col"] {
+      margin-left: 10px;
+    }
+  }
 }
 
+@media (min-width: $breakpoint-tablet) {
+  @include col;
+}
 .theme.col-1 {
   background-color: #927bc1;
 }
